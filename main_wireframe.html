@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coaster - Your next adventure awaits...</title>
+<link rel="stylesheet" href="main_wireframe.css">
+</head>
+<body>
+<div class="navbar">
+  <h1>Coaster</h1>
+  <div class="navbar-buttons">
+    <button id="cart">Cart</button>
+    <button id="account">Account</button>
+  </div>
+</div>
+<div class="header">
+  <h2>Your next adventure awaits...</h2>
+</div>
+<div class="search-area">
+    <input type="text" id="searchInput" placeholder="Search destinations...">
+  <select>
+    <option value="filter1">Low to High</option>
+    <option value="filter2">High to Low</option>
+    <!-- Add more filter options here -->
+  </select>
+</div>
+<div class="destinations">
+  <!-- Row 1 -->
+  <div class="row">
+    <!-- Sample destination -->
+    <div class="destination">
+      <img src="island.jpg" alt="Sample Destination">
+      <p>Vacation 1</p>
+    </div>
+    <div class="destination">
+        <img src="island.jpg" alt="Sample Destination">
+        <p>Family friendly vacation</p>
+    </div>
+    <div class="destination">
+        <img src="island.jpg" alt="Sample Destination">
+        <p>Sample description here...</p>
+    </div>
+    <div class="destination">
+        <img src="island.jpg" alt="Sample Destination">
+        <p>Sample description here...</p>
+    </div>
+    <div class="destination">
+        <img src="island.jpg" alt="Sample Destination">
+        <p>Sample description here...</p>
+    </div>
+
+    <!-- Repeat <div class="destination"> for 5 times per row -->
+  </div>
+  <!-- Row 2 -->
+  <div class="row">
+    <div class="destination">
+        <img src="island.jpg" alt="Sample Destination">
+        <p>Sample description here...</p>
+      </div>
+      <div class="destination">
+          <img src="island.jpg" alt="Sample Destination">
+          <p>Sample description here...</p>
+      </div>
+      <div class="destination">
+          <img src="island.jpg" alt="Sample Destination">
+          <p>Island fun</p>
+      </div>
+      <div class="destination">
+          <img src="island.jpg" alt="Sample Destination">
+          <p>Adults only vacation</p>
+      </div>
+      <div class="destination">
+          <img src="island.jpg" alt="Sample Destination">
+          <p>Sample description here...</p>
+      </div>
+  </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const searchInput = document.getElementById('searchInput');
+      const destinations = document.querySelectorAll('.destination');
+  
+      searchInput.addEventListener('keyup', function(e) {
+        const searchTerm = e.target.value.toLowerCase();
+  
+        destinations.forEach(destination => {
+          const text = destination.textContent.toLowerCase();
+          if (text.includes(searchTerm)) {
+            destination.style.display = '';
+          } else {
+            destination.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
